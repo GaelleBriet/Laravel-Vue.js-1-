@@ -18,7 +18,7 @@ class CreateEstimateLinesTable extends Migration
             $table->string('label');
             $table->integer('time');
             $table->string('type');
-            $table->foreignId('estimate_id')->constrained()->onDelete('cascade');
+            $table->foreignId('estimate_id')->constrained('estimate')->onDelete('cascade');
             $table->timestamps();
         });
     }

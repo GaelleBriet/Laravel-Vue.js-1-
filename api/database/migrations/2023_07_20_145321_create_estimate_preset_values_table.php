@@ -20,7 +20,7 @@ class CreateEstimatePresetValuesTable extends Migration
             $table->integer('time')->nullable();
             $table->integer('startup_time')->nullable();
             $table->integer('total_percentage')->nullable();
-            $table->foreignId('estimate_field_id')->constrained()->onDelete('cascade');
+            $table->foreignId('estimate_field_id')->constrained('estimate_fields')->onDelete('cascade');
             $table->timestamps();
         });
     }

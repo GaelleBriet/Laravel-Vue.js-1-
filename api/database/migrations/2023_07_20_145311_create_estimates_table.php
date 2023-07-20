@@ -13,7 +13,7 @@ class CreateEstimatesTable extends Migration
      */
     public function up()
     {
-        Schema::create('estimates', function (Blueprint $table) {
+        Schema::create('estimate', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->integer('total_time');
