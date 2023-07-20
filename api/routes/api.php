@@ -14,6 +14,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::apiResources( [
+//     'recipes'  => RecipeController::class,
+//     'comments' => CommentController::class,
+//     'users'    => UserController::class,
+//   ] );
+//   Route::get( '/recipes/{recipe}/comments', [RecipeController::class, 'comments'] );
+
+// Route::apiResources([
+//     'estimate' => EstimateController::class,
+// ]);
+
+ Route::get('estimate', 'EstimateController@index');
+
+
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
