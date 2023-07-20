@@ -1,25 +1,23 @@
-version: '3'
+version: "3"
 services:
   api:
     build:
-      context: .
-      dockerfile: api/Dockerfile
+      context: ./api
+      dockerfile: Dockerfile
     depends_on:
       - mysql
     ports:
-      - '8090:80'
-      - '8005:8000'
+      - "8090:80"
+      - "8005:8000"
     volumes:
       - ./api:/var/www/html
-    environment:
-      - DATABASE_URL=${DATABASE_URL}
     env_file:
       - ./api/.env
 
   mysql:
     image: mysql:8.0
     ports:
-      - '4306:3306'
+      - "4306:3306"
     environment:
       - MYSQL_DATABASE=${DB_DATABASE}
       - MYSQL_USER=${DB_USERNAME}
@@ -33,16 +31,16 @@ services:
     depends_on:
       - mysql
     ports:
-      - '8085:8080'
+      - "8085:8080"
 
-  pwa:
+  client:
     build:
-      context: .
-      dockerfile: pwa/Dockerfile
+      context: ./client
+      dockerfile: Dockerfile
     ports:
-      - '5173:5173'
+      - "5173:5173"
     volumes:
-      - ./pwa:/app
+      - ./client:/app
       - /app/node_modules
 
 volumes:
