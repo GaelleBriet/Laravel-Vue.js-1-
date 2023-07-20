@@ -2,6 +2,7 @@
 import InputSelectComponent from './InputSelectComponent.vue'
 import InputCheckboxComponent from './InputCheckboxComponent.vue'
 import InputTextComponent from './InputTextComponent.vue'
+import SpecificTemplateComponent from './SpecificTemplateComponent.vue'
 </script>
 
 <template>
@@ -12,15 +13,7 @@ import InputTextComponent from './InputTextComponent.vue'
 
     <InputCheckboxComponent />
 
-    <div class="input-group">
-      <span class="main-label">Développements spécifiques</span>
-
-      <div class="specific-template-list" id="specificTemplateList"></div>
-
-      <button class="button button-icon" type="button" id="addSpecificTemplate">
-        <i class="fa fa-plus"></i>
-      </button>
-    </div>
+    <SpecificTemplateComponent />
 
     <InputSelectComponent />
 
