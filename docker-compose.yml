@@ -1,0 +1,49 @@
+version: '3'
+services:
+  api:
+    build:
+      context: .
+      dockerfile: api/Dockerfile
+    depends_on:
+      - mysql
+    ports:
+      - '8090:80'
+      - '8005:8000'
+    volumes:
+      - ./api:/var/www/html
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+    env_file:
+      - ./api/.env
+
+  mysql:
+    image: mysql:8.0
+    ports:
+      - '4306:3306'
+    environment:
+      - MYSQL_DATABASE=${DB_DATABASE}
+      - MYSQL_USER=${DB_USERNAME}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=root
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  adminer:
+    image: adminer:4.8.1
+    depends_on:
+      - mysql
+    ports:
+      - '8085:8080'
+
+  pwa:
+    build:
+      context: .
+      dockerfile: pwa/Dockerfile
+    ports:
+      - '5173:5173'
+    volumes:
+      - ./pwa:/app
+      - /app/node_modules
+
+volumes:
+  mysql-data:
