@@ -29,7 +29,7 @@ Route::apiResources([
     'estimate' => EstimateController::class,
     'estimateLines' => EstimateLinesController::class,
     'estimateFields' => EstimateFieldsController::class,
-    'esimatesPresetValues' => EstimatePresetValuesController::class,
+    'esimatePresetValues' => EstimatePresetValuesController::class,
 ]);
 
 

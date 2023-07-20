@@ -15,10 +15,11 @@ class EstimateController extends Controller
      */
     public function index()
     {
-        return Estimate::all();
+        // return Estimate::all();
         // $estimates = Estimate::all();
         // return response()->json($estimates);
 
+        return response()->json(["name" => "GET /api/estimate : Récupération de toutes les estimations."]);
     }
 
     /**
@@ -30,9 +31,11 @@ class EstimateController extends Controller
      */
     public function show(Estimate $estimate)
     {
-        return $estimate;
+        // return $estimate;
         // $estimate = Estimate::findOrFail($id);
         // return response()->json($estimate);
+
+        return response()->json(["name" => "GET /api/estimate/{estimate} : Récupération d'une estimation."]);
     }
 
     /**
@@ -44,8 +47,8 @@ class EstimateController extends Controller
      */
     public function store(Request $request)
     {
-        $estimate = Estimate::create($request->all());
-        return response()->json($estimate, 201); // 201 pour Created
+        // $estimate = Estimate::create($request->all());
+        // return response()->json($estimate, 201); 
 
         // $estimate = new Estimate();
         // $estimate->name = $request->name;
@@ -56,6 +59,8 @@ class EstimateController extends Controller
         //     'name' => $estimate->name,
         //     'total_time' => $estimate->total_time,
         // ]);
+
+        return response()->json(["name" => "POST /api/estimate : Création d'une estimation."]);
     }
 
     /**
@@ -68,13 +73,15 @@ class EstimateController extends Controller
      */
     public function update(Request $request, Estimate $estimate)
     {
-        $estimate->update($request->all());
-        // $estimate->save();
-        return $estimate;
+        // $estimate->update($request->all());
+        // return $estimate;
+
         // Mettre à jour un Estimate spécifique par son ID en utilisant les données reçues depuis la requête
         // $estimate = Estimate::findOrFail($id);
         // $estimate->update($request->all());
         // return response()->json($estimate);
+
+        return response()->json(["name" => "PUT/PATCH /api/estimate{estimate} : Modification d'une estimation."]);
     }
 
     /**
@@ -87,7 +94,10 @@ class EstimateController extends Controller
     public function destroy(Estimate $estimate)
     {
         // $estimate = Estimate::findOrFail($estimate);
-        $estimate->delete();
-        return response()->json(null, 204); // 204 pour No Content
+
+        // $estimate->delete();
+        // return response()->json(null, 204); 
+
+        return response()->json(["name" => "DELETE /api/estimate/{estimate} : Suppression d'une estimation."]);
     }
 }
