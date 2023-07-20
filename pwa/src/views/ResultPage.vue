@@ -1,8 +1,8 @@
 <script setup>
-import TitleComponent from '../components/TitleComponent'
+import TitleComponent from '../components/TitleComponent.vue'
 </script>
 <template>
-    <div class="main-content">
+  <div class="main-content">
     <TitleComponent />
   </div>
 </template>
