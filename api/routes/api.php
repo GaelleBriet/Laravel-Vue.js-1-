@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EstimateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,11 +22,9 @@ use Illuminate\Support\Facades\Route;
 //   ] );
 //   Route::get( '/recipes/{recipe}/comments', [RecipeController::class, 'comments'] );
 
-// Route::apiResources([
-//     'estimate' => EstimateController::class,
-// ]);
-
- Route::get('estimate', 'EstimateController@index');
+Route::apiResources([
+    'estimate' => EstimateController::class,
+]);
 
 
 
