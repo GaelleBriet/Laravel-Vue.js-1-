@@ -54,7 +54,7 @@ import TitleComponent from '../components/TitleComponent.vue'
       <tfoot>
         <tr>
           <td>Total</td>
-          <td>40h</td>
+          <td>40h</td> 
         </tr>
       </tfoot>
     </table>
