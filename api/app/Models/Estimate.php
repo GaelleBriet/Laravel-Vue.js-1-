@@ -11,8 +11,8 @@ class Estimate extends Model
 
     protected $table = 'estimate';
 
-    public function estimate_lines()
+    public function estimateLines()
     {
-        return $this->hasMany(EstimatLine::class, 'estimate_id');
+        return $this->hasMany(EstimatLines::class, 'estimate_id');
     }
 }

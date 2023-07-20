@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class EstimateField extends Model
+class EstimateFields extends Model
 {
     use HasFactory;
 
@@ -13,6 +13,6 @@ class EstimateField extends Model
 
     public function estimatePresetValues()
     {
-        return $this->hasMany(EstimatePresetValue::class, 'estimate_field_id');
+        return $this->hasMany(EstimatePresetValues::class, 'estimate_field_id');
     }
 }

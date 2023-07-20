@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class EstimatePresetValue extends Model
+class EstimatePresetValues extends Model
 {
     use HasFactory;
 
     protected $table = 'estimate_preset_values';
 
-    public function estimateField()
+    public function estimateFields()
     {
-        return $this->belongsTo(EstimateField::class, 'estimate_field_id');
+        return $this->belongsTo(EstimateFields::class, 'estimate_field_id');
     }
 }

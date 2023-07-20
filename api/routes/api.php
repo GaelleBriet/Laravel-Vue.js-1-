@@ -3,6 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EstimateController;
+use App\Http\Controllers\EstimateLinesController;
+use App\Http\Controllers\EstimateFieldsController;
+use App\Http\Controllers\EstimatePresetValuesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +27,9 @@ use App\Http\Controllers\EstimateController;
 
 Route::apiResources([
     'estimate' => EstimateController::class,
+    'estimateLines' => EstimateLinesController::class,
+    'estimateFields' => EstimateFieldsController::class,
+    'esimatesPresetValues' => EstimatePresetValuesController::class,
 ]);
 
 
