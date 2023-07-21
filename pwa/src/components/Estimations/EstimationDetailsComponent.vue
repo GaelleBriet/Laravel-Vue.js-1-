@@ -3,7 +3,6 @@
 <template>
   <div class="main-content">
     <p class="project-name">Estimations de temps pour le projet : O'clock</p>
-
     <table class="table-result">
       <thead>
         <tr>
@@ -11,6 +10,7 @@
           <th>Temps</th>
         </tr>
       </thead>
+
       <tbody>
         <tr>
           <td>Mise en place du projet</td>
@@ -49,6 +49,7 @@
           <td>0h</td>
         </tr>
       </tbody>
+
       <tfoot>
         <tr>
           <td>Total</td>
