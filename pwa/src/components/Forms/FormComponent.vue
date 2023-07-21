@@ -9,13 +9,20 @@ import { ref } from 'vue'
 
 const router = useRouter()
 const projectName = ref('')
+const selectedCheckboxes = ref([])
 
 const handleSubmit = () => {
   console.log('projectName :', projectName.value)
+  console.log('checkboxesSent', selectedCheckboxes.value)
   router.push('/results')
 }
 const inputName = (name) => {
   projectName.value = name.target.value
+}
+
+const handleCheckboxChange = (values) => {
+  selectedCheckboxes.value = values
+  console.log('checkboxes', selectedCheckboxes.value)
 }
 </script>
 
@@ -25,7 +32,7 @@ const inputName = (name) => {
 
     <InputTextComponent @input="inputName" />
 
-    <InputCheckboxComponent />
+    <InputCheckboxComponent :checkboxes="checkboxes" @checkboxChange="handleCheckboxChange" />
 
     <SpecificTemplateComponent />
 
