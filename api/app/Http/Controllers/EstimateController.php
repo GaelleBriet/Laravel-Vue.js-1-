@@ -15,12 +15,12 @@ class EstimateController extends Controller
      */
     public function index()
     {
-        return Estimate::all();
+        // return Estimate::all();
 
         // $estimates = Estimate::all();
         // return response()->json($estimates);
 
-        // return response()->json(["name" => "GET /api/estimate : Récupération de toutes les estimations."]);
+        /return response()->json(["name" => "GET /api/estimate : Récupération de toutes les estimations."]);
     }
 
     /**
@@ -32,11 +32,12 @@ class EstimateController extends Controller
      */
     public function show(Estimate $estimate)
     {
-         return $estimate;
+        // return $estimate;
+
         // $estimate = Estimate::findOrFail($id);
         // return response()->json($estimate);
 
-        // return response()->json(["name" => "GET /api/estimate/{estimate} : Récupération d'une estimation."]);
+        return response()->json(["name" => "GET /api/estimate/{estimate} : Récupération d'une estimation."]);
     }
 
     /**
