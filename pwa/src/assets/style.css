@@ -53,17 +53,6 @@ a {
   display: flex;
 }
 
-.main-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 0 20px;
-}
-
-.main-nav a:hover {
-  color: var(--color-secondary);
-}
-
 /* Titles */
 .main-title {
   font-size: 4rem;

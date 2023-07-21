@@ -6,14 +6,27 @@
     <nav class="main-nav">
       <ul>
         <li>
-          <a href="./index.html"> Calculato'r </a>
+          <routerLink to="/" class="nav-link">Calculato'r</routerLink>
         </li>
         <li>
-          <a href="./estimation-list.html"> Dernières estimations </a>
+          <routerLink to="/estimate" class="nav-link"> Dernières estimations</routerLink>
         </li>
       </ul>
     </nav>
   </header>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+li {
+  list-style-type: none;
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0 20px;
+  }
+  .nav-link:hover {
+    color: var(--color-secondary);
+  }
+}
+</style>
