@@ -266,7 +266,7 @@ input:checked + label::before {
 /* Estimations list */
 
 .estimate-list li {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .estimate-card {
