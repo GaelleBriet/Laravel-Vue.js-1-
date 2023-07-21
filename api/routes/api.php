@@ -18,21 +18,12 @@ use App\Http\Controllers\EstimatePresetValuesController;
 |
 */
 
-// Route::apiResources( [
-//     'recipes'  => RecipeController::class,
-//     'comments' => CommentController::class,
-//     'users'    => UserController::class,
-//   ] );
-//   Route::get( '/recipes/{recipe}/comments', [RecipeController::class, 'comments'] );
-
 Route::apiResources([
     'estimate' => EstimateController::class,
     'estimateLines' => EstimateLinesController::class,
     'estimateFields' => EstimateFieldsController::class,
     'estimatePresetValues' => EstimatePresetValuesController::class,
 ]);
-
-
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
