@@ -26,3 +26,5 @@ http://gaellebriet-server.eddi.cloud:8085/
 ```bash
 php artisan list
 ```
+@ key:generate
+chmod -R o+w storage .env
