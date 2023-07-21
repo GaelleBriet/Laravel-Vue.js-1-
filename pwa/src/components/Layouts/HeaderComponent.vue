@@ -9,7 +9,7 @@
           <routerLink to="/" class="nav-link">Calculato'r</routerLink>
         </li>
         <li>
-          <routerLink to="/estimate" class="nav-link"> Dernières estimations</routerLink>
+          <routerLink to="/estimations" class="nav-link"> Dernières estimations</routerLink>
         </li>
       </ul>
     </nav>

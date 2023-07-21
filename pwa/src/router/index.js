@@ -17,8 +17,8 @@ const router = createRouter({
       component: ResultPage
     },
     {
-      path: '/estimate',
-      name: 'estimate',
+      path: '/estimations',
+      name: 'estimations',
       component: EstimationsList
     }
   ]
