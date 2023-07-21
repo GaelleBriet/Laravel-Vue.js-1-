@@ -1,5 +1,5 @@
 <script setup>
-import { ref, defineProps, defineEmits } from 'vue';
+import { ref, defineProps, defineEmits } from 'vue'
 
 // en attendant de récupérer les données depuis APi
 const checkboxes = [
@@ -25,21 +25,22 @@ const checkboxes = [
   { name: "Gestion des droits d'accès (rôles et autorisations)", id: 'gestion-des-droits-dacces' }
 ]
 
-const selectedCheckboxes = ref([]);
-const emit = defineEmits(['checkboxChange']) 
+const selectedCheckboxes = ref([])
+const emit = defineEmits(['checkboxChange'])
 
-const handleCheckboxChange = (event, name, id) => {
-  const isChecked = event.target.checked;
+const handleCheckboxChange = (event, name) => {
+  const isChecked = event.target.checked
   if (isChecked) {
-    selectedCheckboxes.value.push(name);
+    selectedCheckboxes.value.push(name)
   } else {
-    const index = selectedCheckboxes.value.indexOf(name);
+    const index = selectedCheckboxes.value.indexOf(name)
     if (index !== -1) {
-      selectedCheckboxes.value.splice(index, 1);
+      selectedCheckboxes.value.splice(index, 1)
     }
   }
-  emit('checkboxChange', selectedCheckboxes.value);
-};
+  console.log(selectedCheckboxes.value)
+  emit('checkboxChange', selectedCheckboxes.value)
+}
 
 </script>
 
@@ -49,7 +50,13 @@ const handleCheckboxChange = (event, name, id) => {
 
     <template v-for="checkbox in checkboxes" :key="checkbox.id">
       <div class="checkbox-group">
-        <input type="checkbox" :id="checkbox.id" :name="checkbox.name" :value="checkbox.name" @change="handleCheckboxChange($event, checkbox.name, checkbox.id)"/>
+        <input
+          type="checkbox"
+          :id="checkbox.id"
+          :name="checkbox.name"
+          :value="checkbox.name"
+          @change="handleCheckboxChange($event, checkbox.name)"
+        />
         <label :for="checkbox.id"> {{ checkbox.name }} </label>
       </div>
     </template>

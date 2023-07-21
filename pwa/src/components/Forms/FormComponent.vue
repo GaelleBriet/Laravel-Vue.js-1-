@@ -12,8 +12,11 @@ const projectName = ref('')
 const selectedCheckboxes = ref([])
 
 const handleSubmit = () => {
-  console.log('projectName :', projectName.value)
-  console.log('checkboxesSent', selectedCheckboxes.value)
+  console.log('project name :', projectName.value)
+
+  const selectedCheckboxesArray = [...selectedCheckboxes.value]
+  console.log('checkboxes selected :', selectedCheckboxesArray)
+
   router.push('/results')
 }
 const inputName = (name) => {
@@ -22,7 +25,6 @@ const inputName = (name) => {
 
 const handleCheckboxChange = (values) => {
   selectedCheckboxes.value = values
-  console.log('checkboxes', selectedCheckboxes.value)
 }
 </script>
 
