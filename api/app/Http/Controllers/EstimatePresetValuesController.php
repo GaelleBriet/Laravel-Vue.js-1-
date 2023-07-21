@@ -39,4 +39,5 @@ class EstimatePresetValuesController extends Controller
         // $estimatePresetValues->delete();
         // return response()->json(null, 204);
         return response()->json(["name" => "DELETE /api/estimatePresetValues/{estimatePresetValues} : Suppression d'une estimatePresetValues."]);
+    }
 }
